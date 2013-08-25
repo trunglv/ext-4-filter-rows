@@ -1,0 +1,26 @@
+Lotusbreath - FilterRow Plugin for Extjs 4.2.1
+
+- Version 0.0.1 
+ + Add filter input element to column headers via attribute " filterElement" of column object of a grid
+Example :
+       {
+                text     : 'Published',
+                width    : 85,
+                sortable : true,                
+                dataIndex: 'published',
+                renderer : function(value, meta, record) {
+                	return value ? 'Published' : 'Unpublished' ;
+                },
+                filterElement : new Ext.form.ComboBox({                              
+                        displayField    : 'name',
+                        valueField              : 'state',
+                        triggerAction   : 'all',                
+                        typeAhead               : false,                                
+                        mode                    : 'local',
+                        listWidth               : 160,
+                        hideTrigger             : false,
+                        emptyText               : 'Select',
+                        store                   :[[null, 'All s'],[true,'Published'],[false,'UnPublished']]
+                }),
+            }
+
